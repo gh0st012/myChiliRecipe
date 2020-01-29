@@ -12,9 +12,9 @@ class Kernel extends ConsoleKernel
      *
      * @var array
      */
-    protected $commands = [
-        //
-    ];
+     protected $commands = [
+       CreateDatabaseCommand::class
+     ];
 
     /**
      * Define the application's command schedule.
