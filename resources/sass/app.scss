@@ -7,5 +7,9 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+// GLOBAL
+@import 'global';
+
 // VIEWS
 @import 'homepage';
+@import 'user';
