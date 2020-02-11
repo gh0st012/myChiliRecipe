@@ -2,7 +2,8 @@
 
 .user_header {
   border-bottom: 2px solid black;
-  padding-bottom: 25px;
+  padding-bottom: 50px;
+  padding-top: 50px;
 
   .user_image {
     max-width: 100px;
@@ -14,14 +15,21 @@
 
 .user_recipes {
   padding-top: 25px;
-
-
 }
 
 .user_recipe {
-  padding: 10px;
+  padding-bottom: 25px;
   padding-right: 25px;
+  margin-bottom: 10px;
   border-bottom: 1px solid whitesmoke;
+
+  &:hover {
+    text-decoration: none !important;
+  }
+
+  .title {
+    color: $primary;
+  }
 
   .rating {
     font-weight: 600;
@@ -38,7 +46,10 @@
   }
 
   p {
-    // max-width: 400px;
+    color: black !important;
+    &:hover {
+      color: black !important;
+    }
   }
 
   .user_recipe_buttons {

@@ -18,15 +18,15 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    
+
 </head>
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-dark shadow-sm">
             <div class="container">
                 <a class="navbar-brand d-flex" href="{{ url('/') }}">
-                  <div style="border-right: 1px solid white;"><img src="chililogo.svg" class="pr-3" style="height:45px;"></div>
+                  <div style="border-right: 1px solid white;"><img src="{{ asset('chililogo.svg') }}" class="pr-3" style="height:45px;"></div>
                     <div class="pl-3 pt-2" style="font-weight:600">MY CHILI RECIPE</div>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">

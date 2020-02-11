@@ -5,16 +5,22 @@ namespace App\Http\Controllers;
 use App\Recette;
 use Illuminate\Http\Request;
 
-class RecetteController extends Controller
+class RecettesController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
+     public function __construct() {
+        $this->middleware('auth');
+     }
+
+
     public function index()
     {
-        //
+
     }
 
     /**
@@ -24,7 +30,7 @@ class RecetteController extends Controller
      */
     public function create()
     {
-        //
+        return view('recettes/create');
     }
 
     /**
@@ -35,7 +41,26 @@ class RecetteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $data = request()->validate([
+          'name' => 'required',
+          'description' => 'required',
+          'ingredient' => 'required',
+          'instruction' => 'required',
+          'image' => ['required', 'image'],
+        ]);
+
+        $imagePath = request('image')->store('uploads', 'public');
+
+        auth()->user()->recettes()->create([
+          'name' => $data['name'],
+          'description' => $data['description'],
+          'ingredient' => $data['ingredient'],
+          'instruction' => $data['instruction'],
+          'image' => $imagePath,
+        ]);
+
+        return redirect('/profile/' . auth()->user()->id);
     }
 
     /**
@@ -44,9 +69,9 @@ class RecetteController extends Controller
      * @param  \App\Recette  $recette
      * @return \Illuminate\Http\Response
      */
-    public function show(Recette $recette)
+    public function show(\App\Recette $recette)
     {
-        //
+        return view('recettes/show', compact('recette'));
     }
 
     /**
