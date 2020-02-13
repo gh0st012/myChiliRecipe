@@ -17280,6 +17280,7 @@ readers do not read off random characters that represent icons */
   background-color: #cf0c0c;
   font-weight: 600;
   color: white;
+  border-radius: 10px;
 }
 
 .primary_button:hover {
@@ -17288,11 +17289,52 @@ readers do not read off random characters that represent icons */
 
 .navbar {
   background-color: black !important;
+  height: 80px !important;
+  max-height: 80px !important;
 }
 
 pre {
   white-space: pre-wrap !important;
   overflow-wrap: break-word;
+}
+
+.is-full-height {
+  height: calc(100vh - 80px);
+}
+
+.homepage {
+  background-image: url(/images/mychili.jpg?1fd168981d3eba1f7dec319235816e67);
+}
+
+.homepage .primary_button {
+  width: 350px;
+  height: 80px;
+  font-size: 32px;
+  line-height: 64px;
+  weight: 600;
+  text-align: center;
+}
+
+.homepage .homepage_jumbotron_wrapper {
+  position: relative;
+  height: 100%;
+  text-align: center;
+}
+
+.homepage .homepage_jumbotron_wrapper .homepage_jumbotron {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.homepage .homepage_jumbotron_wrapper img {
+  width: 800px;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 50px;
 }
 
 .user_header {

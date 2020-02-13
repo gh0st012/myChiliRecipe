@@ -20,9 +20,12 @@ class CreateRecettesTable extends Migration
             $table->string('name')->nullable();
             $table->text('description')->nullable();
             $table->string('image')->nullable();
-            $table->string('ingredient')->nullable();
-            $table->string('instruction')->nullable();
+            $table->text('ingredient')->nullable();
+            $table->text('instruction')->nullable();
             $table->float('rating')->nullable();
+            $table->integer('spiciness')->nullable();
+            $table->integer('serving')->nullable();
+            $table->integer('time')->nullable();
             $table->index('user_id');
         });
     }

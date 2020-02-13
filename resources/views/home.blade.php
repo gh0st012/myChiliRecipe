@@ -6,13 +6,16 @@
   <div class="user_header">
     <div class="row">
       <div class="col-3">
-        <img src="{{ asset('user.png') }}" class="user_image"alt="">
+
+        <img src="{{ asset('user.png') }}" class="user_image">
       </div>
       <div class="col-9">
         <div class="title">
           {{ $user->name }}
         </div>
-        <a class="btn primary_button" href="/recipe/create">NEW RECIPE</a>
+        @can('update', $user->profile)
+          <a class="btn primary_button" href="/recipe/create">NEW RECIPE</a>
+        @endcan
         <div class="sub-title">
 
           {{ count($user->recettes) }} Recipes

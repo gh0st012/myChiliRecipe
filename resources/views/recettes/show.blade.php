@@ -2,6 +2,7 @@
 @extends('layouts.app')
 
 @section('content')
+  <div class="py-4">
   <div class="container">
     <div class="upper_recipe_show">
       <div class="row">
@@ -31,8 +32,8 @@
       <div class="recipe_description">
         <div class="row">
           <div class="col-12">
-            <div class="sub-title" style="display:inline-block;">
-              DESCRIPTION:
+            <div class="sub-title">
+              DESCRIPTION
             </div>
             {{ $recette->description }}
           </div>
@@ -64,5 +65,5 @@
       </div>
     </div>
   </div>
-
+</div>
 @endsection

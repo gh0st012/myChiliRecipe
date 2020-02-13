@@ -3,7 +3,9 @@
 
 @section('content')
 
+<div class="py-4">
 
+</div>
 <div class="container">
     <form action="/recipe" enctype="multipart/form-data" method="post">
 
@@ -100,7 +102,7 @@
         </div>
     </form>
 </div>
-
+</div>
 
 
 @endsection

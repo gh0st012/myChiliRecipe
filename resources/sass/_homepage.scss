@@ -1,0 +1,39 @@
+
+
+.homepage {
+  background-image: url("mychili.jpg");
+
+.primary_button {
+  width: 350px;
+  height: 80px;
+  font-size: 32px;
+  line-height: 64px;
+  weight: 600;
+  text-align: center;
+}
+
+.homepage_jumbotron_wrapper{
+ position:relative;
+ height:100%;
+ text-align: center;
+
+  .homepage_jumbotron {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  img {
+    width: 800px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 50px;
+
+  }
+
+}
+
+
+}

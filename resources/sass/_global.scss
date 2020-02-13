@@ -15,6 +15,7 @@
   background-color: $primary;
   font-weight: 600;
   color: white;
+  border-radius: 10px;
 
   &:hover{
     color: white;
@@ -23,10 +24,17 @@
 
 .navbar {
   background-color: black !important;
+  height: $navbar-height;
+  max-height: $navbar-height;
 }
 
 pre {
   white-space: pre-wrap !important;
   overflow-wrap: break-word;
   // text-align: left;
+}
+
+//why is this not accepting the navbar-height variable??
+.is-full-height {
+  height: calc(100vh - 80px);
 }
