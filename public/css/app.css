@@ -17308,14 +17308,21 @@ pre {
   margin-right: auto;
 }
 
-.user_recipes {
-  padding-top: 25px;
+.user_header .primary_button {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.user_header .title {
+  color: #cf0c0c;
 }
 
 .user_recipe {
+  padding-top: 25px;
   padding-bottom: 25px;
   padding-right: 25px;
-  margin-bottom: 10px;
+  margin-bottom: 25px;
   border-bottom: 1px solid whitesmoke;
 }
 
@@ -17338,7 +17345,7 @@ pre {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  max-width: 150px;
+  max-width: 100%;
 }
 
 .user_recipe p {
@@ -17353,5 +17360,43 @@ pre {
   position: absolute;
   bottom: 0;
   right: 0;
+}
+
+.upper_recipe_show {
+  margin-top: 25px;
+  font-size: 18px;
+}
+
+.upper_recipe_show .chili_image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+}
+
+.upper_recipe_show .title {
+  color: #cf0c0c;
+}
+
+.upper_recipe_show .sub-title {
+  color: #cf0c0c;
+}
+
+.upper_recipe_show .recipe_information {
+  padding-top: 25px;
+  font-weight: 600;
+}
+
+.upper_recipe_show .recipe_description {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.lower_recipe_show {
+  font-size: 18px;
+}
+
+.lower_recipe_show .sub-title {
+  color: #cf0c0c;
 }
 

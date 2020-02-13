@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use App\Recette;
 use Illuminate\Http\Request;
 
@@ -13,10 +14,9 @@ class RecettesController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-     public function __construct() {
-        $this->middleware('auth');
-     }
-
+     // public function __construct() {
+     //    $this->middleware('auth');
+     // }
 
     public function index()
     {
@@ -69,7 +69,7 @@ class RecettesController extends Controller
      * @param  \App\Recette  $recette
      * @return \Illuminate\Http\Response
      */
-    public function show(\App\Recette $recette)
+    public function show(Recette $recette)
     {
         return view('recettes/show', compact('recette'));
     }
@@ -80,10 +80,18 @@ class RecettesController extends Controller
      * @param  \App\Recette  $recette
      * @return \Illuminate\Http\Response
      */
-    public function edit(Recette $recette)
+
+
+
+
+    public function edit(Request $request, Recette $recette)
     {
-        //
+      $this->authorize('update', $recette);
+
+      return view('recettes/edit', compact('recette'));
     }
+
+
 
     /**
      * Update the specified resource in storage.
@@ -94,8 +102,23 @@ class RecettesController extends Controller
      */
     public function update(Request $request, Recette $recette)
     {
-        //
+       $this->authorize('update', $recette);
+
+       $data = request()->validate([
+         'name' => 'required',
+         'description' => 'required',
+         'ingredient' => 'required',
+         'instruction' => 'required',
+         // 'image' => ['required', 'image'],
+       ]);
+
+
+       $recette->update($data);
+
+       return redirect('/recipe/' . $recette->id);
+
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -103,8 +126,10 @@ class RecettesController extends Controller
      * @param  \App\Recette  $recette
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Recette $recette)
+    public function destroy(Request $request, Recette $recette)
     {
-        //
+      $recette->delete();
+
+      return redirect('/profile/' . auth()->user()->id);
     }
 }

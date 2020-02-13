@@ -18,27 +18,28 @@
           </a>
           <br>
           <div class="recipe_information" style="display: inline-block;">
-            <i class="fas fa-star"></i> Rating:
+             Rating: N/A <i class="fas fa-star"></i>
             <br>
-            <i class="fas fa-clock"></i> Cooking Time:
+             Spiciness: N/A <i class="fas fa-pepper-hot"></i>
             <br>
-            <i class="fas fa-users"></i> Servings:
+             Cooking Time: N/A <i class="fas fa-clock"></i>
+            <br>
+             Servings: N/A <i class="fas fa-users"></i>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-12">
-          <div class="sub-title" style="display:inline-block;">
-            DESCRIPTION:
+      <div class="recipe_description">
+        <div class="row">
+          <div class="col-12">
+            <div class="sub-title" style="display:inline-block;">
+              DESCRIPTION:
+            </div>
+            {{ $recette->description }}
           </div>
-          {{ $recette->description }}
         </div>
       </div>
     </div>
   </div>
-
-
-
 
 
   <div class="container">

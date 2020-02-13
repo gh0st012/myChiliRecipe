@@ -12,10 +12,15 @@
         <div class="title">
           {{ $user->name }}
         </div>
+        <a class="btn primary_button" href="/recipe/create">NEW RECIPE</a>
         <div class="sub-title">
+
           {{ count($user->recettes) }} Recipes
+          <br>
+          My Chili Recipe Avg. Rating: N/A <i class="fas fa-star"></i>
         </div>
-        <a class="btn primary_button" href="/p/create">NEW RECIPE</a>
+
+
         </div>
       </div>
     </div>
@@ -25,29 +30,39 @@
 <div class='container'>
   <div class="user_recipes">
     @foreach($user->recettes as $recette)
-      <a class="user_recipe" href="/p/{{ $recette->id }}">
+      <div class="user_recipe">
         <div class="row">
           <div class="col-3">
             <img src="/storage/{{ $recette->image }}" class="user_chili_image" alt="">
           </div>
           <div class="col-6">
-            <div class="title">
+            <a class="title" href="/recipe/{{ $recette->id }}">
               {{ $recette->name }}
-            </div>
+            </a>
             <p> {{ $recette->description }} </p>
           </div>
           <div class="col-3">
             <div class="rating">
-              {{ $recette->rating }}
+              N/A
+              {{-- {{ $recette->rating }} --}}
             </div>
             <div class="user_recipe_buttons">
-              <button type="button" class="btn btn-link"> Edit </button>
-              <button type="button" class="btn btn-link"> Delete </button>
+              @can('update', $recette)
+                <a class="btn btn-link" href="/recipe/{{ $recette->id }}/edit">Edit </a>
+
+              {{-- <button type="button" class="btn btn-link"> Edit </button> --}}
+                <form action="/recipe/{{ $recette->id }}" method="post" style="display:inline-block;">
+                    @method('DELETE')
+                    @csrf
+                    <button class="btn btn-link" onclick="return confirm('Are you sure you want to delete this recipe?')" type="submit">Delete</button>
+                </form>
+
+              @endcan
             </div>
 
           </div>
         </div>
-      </a>
+      </div>
     @endforeach
   </div>
 </div>
