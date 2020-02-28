@@ -11,6 +11,10 @@
     </div>
   </div>
 
+<div class="is-full-height">
+  {{ randomRecipe()->image }}
+    <img src="/storage/{{ randomRecipe()->image }}" class="user_chili_image" alt="">
+</div>
 
 
 

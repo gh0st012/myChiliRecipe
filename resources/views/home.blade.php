@@ -52,17 +52,13 @@
             <div class="user_recipe_buttons">
               @can('update', $recette)
                 <a class="btn btn-link" href="/recipe/{{ $recette->id }}/edit">Edit </a>
-
-              {{-- <button type="button" class="btn btn-link"> Edit </button> --}}
                 <form action="/recipe/{{ $recette->id }}" method="post" style="display:inline-block;">
                     @method('DELETE')
                     @csrf
                     <button class="btn btn-link" onclick="return confirm('Are you sure you want to delete this recipe?')" type="submit">Delete</button>
                 </form>
-
               @endcan
             </div>
-
           </div>
         </div>
       </div>

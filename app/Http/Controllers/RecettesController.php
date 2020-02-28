@@ -39,9 +39,12 @@ class RecettesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+
     public function store(Request $request)
     {
-
+        //VALIDE LES ATTRIBUTS RENTRES LORS DE LA CREATION DE LA RECETTE
+        //ICI, TOUS LES ATTRIBUTS DE LA RECETTE SON RECQUIS POUR CREER LA RECETTE
         $data = request()->validate([
           'name' => 'required',
           'description' => 'required',
@@ -50,8 +53,10 @@ class RecettesController extends Controller
           'image' => ['required', 'image'],
         ]);
 
+        //$imagePath DIRIGE LA REQUETE DE DATA DE L'IMAGE VERS LE DOSSIER ADEQUAT
         $imagePath = request('image')->store('uploads', 'public');
 
+        //STORE LES ATTRIBUTS DE LA RECETTE DANS UN ARRAY AVEC LA METHODE create()
         auth()->user()->recettes()->create([
           'name' => $data['name'],
           'description' => $data['description'],
@@ -60,6 +65,7 @@ class RecettesController extends Controller
           'image' => $imagePath,
         ]);
 
+        //REDIRIGE SUR LE PROFIL DE L'UTILISATEUR APRES LA CREATION DE LA RECETTE
         return redirect('/profile/' . auth()->user()->id);
     }
 
@@ -102,8 +108,11 @@ class RecettesController extends Controller
      */
     public function update(Request $request, Recette $recette)
     {
+      // EN LIEN AVEC LES POLICIES, PERMET AU USER D'UPDATE SA RECETTE SEULEMENT
+      // SI IL EN EST LE CREATEUR
        $this->authorize('update', $recette);
 
+       // LES ATTRIBUTS SUIVANT SONT REQUIRED AFIN D'UPDATE LA RECETTE
        $data = request()->validate([
          'name' => 'required',
          'description' => 'required',
@@ -112,11 +121,11 @@ class RecettesController extends Controller
          // 'image' => ['required', 'image'],
        ]);
 
-
+       // LA RECETTE EST SAUVEGARDE - OU PLUTOT UPDATED
        $recette->update($data);
 
+       // LE CONTROLLER REDIRIGE L'UTILISATEUR A LA RECETTE UPDATED
        return redirect('/recipe/' . $recette->id);
-
     }
 
 
@@ -128,8 +137,11 @@ class RecettesController extends Controller
      */
     public function destroy(Request $request, Recette $recette)
     {
+      //DETRUIT LA RECETTE AVEC LA METHODE delete()
       $recette->delete();
 
       return redirect('/profile/' . auth()->user()->id);
     }
+
+
 }
