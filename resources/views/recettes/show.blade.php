@@ -43,9 +43,9 @@
 
 
             <br>
-             Cooking Time: N/A <i class="fas fa-clock"></i>
+             Cooking Time: {{ $recette->time }} <i class="fas fa-clock"></i>
             <br>
-             Servings: N/A <i class="fas fa-users"></i>
+             Servings: {{ $recette->serving }} <i class="fas fa-users"></i>
           </div>
         </div>
       </div>

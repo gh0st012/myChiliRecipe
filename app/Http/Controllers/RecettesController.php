@@ -57,6 +57,8 @@ class RecettesController extends Controller
         //ICI, TOUS LES ATTRIBUTS DE LA RECETTE SON RECQUIS POUR CREER LA RECETTE
         $data = request()->validate([
           'name' => 'required',
+          'time' => 'required',
+          'serving' => 'required',
           'description' => 'required',
           'ingredient' => 'required',
           'instruction' => 'required',
@@ -69,6 +71,8 @@ class RecettesController extends Controller
         //STORE LES ATTRIBUTS DE LA RECETTE DANS UN ARRAY AVEC LA METHODE create()
         auth()->user()->recettes()->create([
           'name' => $data['name'],
+          'time' => $data['time'],
+          'serving' => $data['serving'],
           'description' => $data['description'],
           'ingredient' => $data['ingredient'],
           'instruction' => $data['instruction'],

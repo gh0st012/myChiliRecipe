@@ -33,6 +33,58 @@
                 </div>
 
                 <div class="form-group row">
+                    <label for="caption" class="col-md-4 col-form-label">Cooking time</label>
+
+                    <input id="time"
+                           type="text"
+                           class="form-control{{ $errors->has('time') ? ' is-invalid' : '' }}"
+                           name="time"
+                           value="{{ old('time') }}"
+                           autocomplete="time" autofocus>
+
+                    @if ($errors->has('caption'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('time') }}</strong>
+                        </span>
+                    @endif
+                </div>
+
+
+                <div class="form-group row">
+                    <label for="caption" class="col-md-4 col-form-label">Servings</label>
+
+                    <input id="servings"
+                           type="text"
+                           class="form-control{{ $errors->has('servings') ? ' is-invalid' : '' }}"
+                           name="servings"
+                           value="{{ old('servings') }}"
+                           autocomplete="servings" autofocus>
+
+                    @if ($errors->has('caption'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('servings') }}</strong>
+                        </span>
+                    @endif
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <div class="form-group row">
                     <label for="description" class="col-md-4 col-form-label">{{ __('Description') }}</label>
 
 
