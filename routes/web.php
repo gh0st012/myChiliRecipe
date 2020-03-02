@@ -25,3 +25,5 @@ Route::patch('/recipe/{recette}', 'RecettesController@update')->name('recette.up
 Route::delete('/recipe/{recette}', 'RecettesController@destroy');
 
 Route::get('/profile/{user}', 'ProfilesController@index')->name('profile.show');
+
+Route::post('/rating/{recette}', 'RecettesController@recetteStar')->name('recetteStar');

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Rating;
 use App\User;
 use App\Recette;
 use Illuminate\Http\Request;
@@ -17,6 +18,15 @@ class RecettesController extends Controller
      // public function __construct() {
      //    $this->middleware('auth');
      // }
+
+     public function recetteStar (Request $request, Recette $recette) {
+      $rating = new Rating;
+      $rating->user_id = auth()->user()->id;
+      $rating->rating = $request->input('star');
+      $recette->ratings()->save($rating);
+      return redirect()->back();
+    }
+
 
     public function index()
     {
