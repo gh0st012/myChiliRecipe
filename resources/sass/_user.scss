@@ -1,0 +1,73 @@
+
+
+.user_header {
+  border-bottom: 2px solid black;
+  padding-bottom: 50px;
+  padding-top: 50px;
+
+  .user_image {
+    max-width: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .primary_button {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .title {
+    color: $primary;
+  }
+  
+}
+
+.user_recipes {
+  // padding-top: 25px;
+}
+
+.user_recipe {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-right: 25px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid whitesmoke;
+
+  &:hover {
+    text-decoration: none !important;
+  }
+
+  .title {
+    color: $primary;
+  }
+
+  .rating {
+    font-weight: 600;
+    font-size: 24px;
+    color: $primary;
+    text-align: right;
+  }
+
+  .user_chili_image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+  }
+
+  p {
+    color: black !important;
+    &:hover {
+      color: black !important;
+    }
+  }
+
+  .user_recipe_buttons {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+}

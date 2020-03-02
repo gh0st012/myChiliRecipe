@@ -17,4 +17,13 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/recipe/create', 'RecettesController@create');
+Route::post('/recipe', 'RecettesController@store');
+Route::get('/recipe/{recette}', 'RecettesController@show');
+Route::get('/recipe/{recette}/edit', 'RecettesController@edit')->name('recette.edit');
+Route::patch('/recipe/{recette}', 'RecettesController@update')->name('recette.update');
+Route::delete('/recipe/{recette}', 'RecettesController@destroy');
+
+Route::get('/profile/{user}', 'ProfilesController@index')->name('profile.show');
+
+Route::post('/rating/{recette}', 'RecettesController@recetteStar')->name('recetteStar');
