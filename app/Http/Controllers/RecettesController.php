@@ -30,7 +30,9 @@ class RecettesController extends Controller
 
     public function index()
     {
+      $recettes = Recette::all();
 
+      return view('recettes/index', compact('recettes'));
     }
 
     /**

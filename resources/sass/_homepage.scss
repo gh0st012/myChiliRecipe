@@ -34,6 +34,25 @@
   }
 
 }
+}
 
+.recipe_of_the_day {
+  padding-top: $navbar-height;
+
+  .title {
+    text-align: center;
+    font-size: 48px;
+    font-weight: 600;
+    color: black;
+  }
+
+  .title_bar {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    border-bottom: 5px solid $primary;
+    padding-top: 5px;
+}
 
 }

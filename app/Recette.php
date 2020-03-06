@@ -4,9 +4,11 @@ namespace App;
 
 use willvincent\Rateable\Rateable;
 use Illuminate\Database\Eloquent\Model;
+use Laravel\Scout\Searchable;
 
 class Recette extends Model {
 
+    use Searchable;
     use Rateable;
 
     protected $guarded = [];

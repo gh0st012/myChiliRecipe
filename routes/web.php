@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/recipe/index', 'RecettesController@index');
 Route::get('/recipe/create', 'RecettesController@create');
 Route::post('/recipe', 'RecettesController@store');
 Route::get('/recipe/{recette}', 'RecettesController@show');
@@ -27,3 +28,12 @@ Route::delete('/recipe/{recette}', 'RecettesController@destroy');
 Route::get('/profile/{user}', 'ProfilesController@index')->name('profile.show');
 
 Route::post('/rating/{recette}', 'RecettesController@recetteStar')->name('recetteStar');
+
+
+Route::any('/search',function(){
+    $q = Request::get ( 'q' );
+    $recette = App\Recette::where('name','LIKE','%'.$q.'%')->orWhere('description','LIKE','%'.$q.'%')->get();
+    if(count($recette) > 0)
+        return view('recettes/search')->withDetails($recette)->withQuery ( $q );
+    else return view ('recettes/search')->withMessage('No Details found. Try to search again !');
+});

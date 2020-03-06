@@ -16,7 +16,7 @@
                 </div>
 
                 <div class="form-group row">
-                    <label for="caption" class="col-md-4 col-form-label">Recipe name</label>
+                    <label for="caption" class="col-md-4 col-form-label">Recipe Name</label>
 
                     <input id="name"
                            type="text"
@@ -33,7 +33,7 @@
                 </div>
 
                 <div class="form-group row">
-                    <label for="caption" class="col-md-4 col-form-label">Cooking time</label>
+                    <label for="caption" class="col-md-4 col-form-label">Cooking Time</label>
 
                     <input id="time"
                            type="text"
@@ -53,16 +53,16 @@
                 <div class="form-group row">
                     <label for="caption" class="col-md-4 col-form-label">Servings</label>
 
-                    <input id="servings"
+                    <input id="serving"
                            type="text"
-                           class="form-control{{ $errors->has('servings') ? ' is-invalid' : '' }}"
-                           name="servings"
-                           value="{{ old('servings') }}"
-                           autocomplete="servings" autofocus>
+                           class="form-control{{ $errors->has('serving') ? ' is-invalid' : '' }}"
+                           name="serving"
+                           value="{{ old('serving') }}"
+                           autocomplete="serving" autofocus>
 
                     @if ($errors->has('caption'))
                         <span class="invalid-feedback" role="alert">
-                            <strong>{{ $errors->first('servings') }}</strong>
+                            <strong>{{ $errors->first('serving') }}</strong>
                         </span>
                     @endif
                 </div>

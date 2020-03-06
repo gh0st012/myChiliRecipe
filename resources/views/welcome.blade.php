@@ -14,8 +14,16 @@
 
 @if (randomRecipe() == !null)
   <div class="is-full-height">
-    {{ randomRecipe()->image }}
-      <img src="/storage/{{ randomRecipe()->image }}" class="user_chili_image" alt="">
+    <div class="recipe_of_the_day">
+
+      <div class="title">
+        CHILI OF THE WEEK
+        <div class="title_bar">
+        </div>
+      </div>
+
+      {{-- <img src="/storage/{{ randomRecipe()->image }}" class="user_chili_image" alt=""> --}}
+    </div>
   </div>
 @endif
 

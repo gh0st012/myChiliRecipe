@@ -17302,6 +17302,40 @@ pre {
   height: calc(100vh - 80px);
 }
 
+.nav-link {
+  color: white;
+  font-weight: 600;
+}
+
+#navbar_search_box {
+  width: 60%;
+  margin-top: 15px;
+  padding-left: 10px;
+  margin-right: 10px;
+}
+
+#index_search_box {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 400px;
+  width: 400px;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  border-radius: 25px;
+}
+
+.search_button {
+  color: white;
+  font-weight: 600;
+  background-color: #cf0c0c;
+}
+
+.search_button:hover {
+  color: white;
+  opacity: 0.8;
+}
+
 /** rating **/
 
 /** end rating **/
@@ -17395,6 +17429,26 @@ label.star:before {
   margin-bottom: 50px;
 }
 
+.recipe_of_the_day {
+  padding-top: 80px !important;
+}
+
+.recipe_of_the_day .title {
+  text-align: center;
+  font-size: 48px;
+  font-weight: 600;
+  color: black;
+}
+
+.recipe_of_the_day .title_bar {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+  border-bottom: 5px solid #cf0c0c;
+  padding-top: 5px;
+}
+
 .user_header {
   border-bottom: 2px solid black;
   padding-bottom: 50px;
@@ -17475,7 +17529,7 @@ label.star:before {
 }
 
 .upper_recipe_show .title {
-  color: #cf0c0c;
+  color: #cf0c0c !important;
 }
 
 .upper_recipe_show .sub-title {
@@ -17496,7 +17550,28 @@ label.star:before {
   font-size: 18px;
 }
 
-.lower_recipe_show .sub-title {
+.lower_recipe_show .title {
   color: #cf0c0c;
+}
+
+.my_chili_rating {
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.index .big_title {
+  text-align: center;
+  font-size: 48px;
+  font-weight: 600;
+  color: black;
+}
+
+.index .title_bar {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+  border-bottom: 5px solid #cf0c0c;
+  padding-top: 5px;
 }
 

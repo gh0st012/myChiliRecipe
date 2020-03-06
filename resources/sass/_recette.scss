@@ -11,7 +11,7 @@
   }
 
   .title {
-    color: $primary;
+    color: $primary !important;
   }
 
   .sub-title {
@@ -33,7 +33,35 @@
 
 .lower_recipe_show {
   font-size: 18px;
-  .sub-title {
+  .title {
     color: $primary;
   }
+}
+
+
+.my_chili_rating {
+  font-weight: 600;
+  font-size: 24px;
+}
+
+
+
+
+//INDEX
+.index {
+  .big_title {
+    text-align: center;
+    font-size: 48px;
+    font-weight: 600;
+    color: black;
+  }
+
+  .title_bar {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    border-bottom: 5px solid $primary;
+    padding-top: 5px;
+}
 }

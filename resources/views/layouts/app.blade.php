@@ -23,7 +23,7 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-dark shadow-sm">
+        <nav class="navbar sticky-top navbar-expand-md navbar-dark shadow-sm">
             <div class="container">
                 <a class="navbar-brand d-flex" href="{{ url('/') }}">
                   <img src="{{ asset('MyChiliLogo.png') }}" class="pr-3" style="height:45px;">
@@ -35,8 +35,20 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                      <a class="nav-link" href="/recipe/index"><b>ALL RECIPES</b><span class="sr-only">(current)</span></a>
                     </ul>
+
+                    <form action="/search" method="POST" role="search" id="navbar_search_box">
+                        {{ csrf_field() }}
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" name="q"
+                                placeholder="Search Chili"> <span class="input-group-append">
+                                <button type="submit" class="btn search_button">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </span>
+                        </div>
+                    </form>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -71,6 +83,7 @@
                             </li>
                         @endguest
                     </ul>
+
                 </div>
             </div>
         </nav>

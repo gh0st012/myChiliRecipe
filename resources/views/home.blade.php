@@ -17,8 +17,11 @@
           <a class="btn primary_button" href="/recipe/create">NEW RECIPE</a>
         @endcan
         <div class="sub-title">
-
-          {{ count($user->recettes) }} Recipes
+          @if (count($user->recettes) >= 2)
+            {{ count($user->recettes) }} Recipes
+          @else
+            {{ count($user->recettes) }} Recipe
+          @endif
           <br>
           My Chili Recipe Avg. Rating: N/A <i class="fas fa-star"></i>
         </div>
@@ -46,8 +49,7 @@
           </div>
           <div class="col-3">
             <div class="rating">
-              N/A
-              {{-- {{ $recette->rating }} --}}
+              {{ round($recette->averageRating, 2) }} / 5
             </div>
             <div class="user_recipe_buttons">
               @can('update', $recette)
